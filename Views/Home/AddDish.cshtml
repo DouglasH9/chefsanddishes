@@ -1,0 +1,23 @@
+<h1>Add a Dish!</h1>
+
+<form action="pushdish" method="POST">
+    <label for="DishName">Name of Dish</label>
+    <input type="text" name="DishName">
+    <label for="Calories">Calories</label>
+    <input type="number" name="Calories" min="0">
+    <label for="Description">Description</label>
+    <input type="text" name="Description">
+    <label for="Tastiness">Tastiness</label>
+    <input type="number" name="Tastiness" min="0" max="5">
+    <label for="chef">Chef</label>
+    <select name="ChefId" id="ChefId">Creator
+        @{
+            foreach (Chef chef in ViewBag.AllChefs)
+            {
+                <option value=@chef.ChefId>@chef.FName @chef.LName</option>
+            }
+        }
+        </select>
+    <input class="btn btn-primary" type="submit">
+</form>
+<a href="/">Home</a>
